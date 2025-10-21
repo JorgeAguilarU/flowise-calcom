@@ -1,9 +1,8 @@
 {
   "name": "flowise-calcom",
   "version": "1.0.0",
-  "main": "start.js",
   "scripts": {
-    "start": "node start.js"
+    "start": "concurrently \"npm run start --prefix ./flowise\" \"npm run start --prefix ./cal\""
   },
   "dependencies": {
     "concurrently": "^8.0.1"
