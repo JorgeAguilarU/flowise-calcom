@@ -13,4 +13,13 @@ RUN npm install
 # Clona Cal.com
 WORKDIR /app
 RUN git clone https://github.com/calcom/cal.com.git cal
-W
+WORKDIR /app/cal
+RUN npm install
+
+# Vuelve al root
+WORKDIR /app
+
+# Ejecuta ambos servicios
+CMD concurrently \
+  "npm run start --prefix ./flowise" \
+  "npm run start --prefix ./cal"
