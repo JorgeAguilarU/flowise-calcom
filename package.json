@@ -1,0 +1,11 @@
+{
+  "name": "flowise-calcom",
+  "version": "1.0.0",
+  "main": "start.js",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  }
+}

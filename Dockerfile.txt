@@ -1,0 +1,21 @@
+FROM node:18
+
+WORKDIR /app
+
+RUN npm install -g concurrently
+
+RUN git clone https://github.com/FlowiseAI/Flowise.git flowise
+WORKDIR /app/flowise
+RUN npm install
+
+WORKDIR /app
+RUN git clone https://github.com/calcom/cal.com.git cal
+WORKDIR /app/cal
+RUN npm install
+
+WORKDIR /app
+COPY start.js .
+
+EXPOSE 3000 3001
+
+CMD ["node", "start.js"]
